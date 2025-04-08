@@ -1,6 +1,8 @@
 const express = require('express')
 const { Server } = require('socket.io')
 const http  = require('http')
+const cors = require('cors')
+const cookieParser = require('cookie-parser')
 const getUserDetailsFromToken = require('../helpers/getUserDetailsFromToken')
 const UserModel = require('../models/UserModel')
 const { ConversationModel,MessageModel } = require('../models/ConversationModel')
@@ -8,11 +10,19 @@ const getConversation = require('../helpers/getConversation')
 
 const app = express()
 
+// Configure middleware
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true
+}))
+app.use(express.json())
+app.use(cookieParser())
+
 /***socket connection */
 const server = http.createServer(app)
 const io = new Server(server,{
     cors : {
-        origin : process.env.FRONTEND_URL,
+        origin : process.env.FRONTEND_URL || '*',
         credentials : true
     }
 })
