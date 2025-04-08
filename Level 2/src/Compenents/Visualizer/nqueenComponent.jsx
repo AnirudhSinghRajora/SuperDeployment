@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Nqueen } from "../Algorithm/nqueen";
 import { changeDelay } from "../Utils/utils";
-import './nqueenCompone'
+import './nqueenComponent.css'
 
 export default function NQueen() {
 

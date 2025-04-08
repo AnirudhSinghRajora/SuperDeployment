@@ -2,20 +2,21 @@
 	"name": "nqueen",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": " ",
+	"homepage": ".",
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.11.9",
-		"@testing-library/": "^11.2.5",
 		"@testing-library/user-event": "^12.8.3",
-		
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-scripts": "^5.0.1",
 		"web-vitals": "^1.1.1"
 	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "reild",
-		"deploy": " -d build"
+		"eject": "react-scripts eject",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
